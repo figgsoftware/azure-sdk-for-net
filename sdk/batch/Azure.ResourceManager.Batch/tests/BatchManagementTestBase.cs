@@ -53,7 +53,7 @@ namespace Azure.ResourceManager.Batch.Tests
                 using (SessionRecording.DisableRecording())
                 {
                     var subscription = await GlobalClient.GetDefaultSubscriptionAsync();
-                    var rgLro = await subscription.GetResourceGroups().CreateOrUpdateAsync(WaitUntil.Completed, rgName, new ResourceGroupData(AzureLocation.WestUS2));
+                    var rgLro = await subscription.GetResourceGroups().CreateOrUpdateAsync(WaitUntil.Completed, rgName, new ResourceGroupData(AzureLocation.EastUS));
                     var storage = await CreateStorageAccount(rgLro.Value, storageAccountName);
                     _resourceGroupIdentifier = rgLro.Value.Data.Id;
                     StorageAccountIdentifier = storage.Id;
