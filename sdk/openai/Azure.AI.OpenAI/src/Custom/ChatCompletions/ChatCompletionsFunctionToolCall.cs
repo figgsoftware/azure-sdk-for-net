@@ -40,7 +40,7 @@ public partial class ChatCompletionsFunctionToolCall : ChatCompletionsToolCall
     /// This constructor is intended for use with <see cref="ChatRequestAssistantMessage"/> when constructing request
     /// messages for conversation history from accumulated streaming tool call updates.
     /// </remarks>
-    public ChatCompletionsFunctionToolCall(string id, string name, string arguments) : base(id)
+    public ChatCompletionsFunctionToolCall(string id, string name, string arguments) : this(id, new FunctionCall(name, arguments))
     {
         Argument.AssertNotNull(name, nameof(name));
         Argument.AssertNotNull(arguments, nameof(arguments));
